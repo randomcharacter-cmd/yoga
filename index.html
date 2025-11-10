@@ -264,36 +264,79 @@
             color: white;
         }
 
-        .schedule-grid {
+        .calendar-container {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .calendar-header {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .schedule-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .schedule-card h4 {
+            grid-template-columns: 100px repeat(7, 1fr);
+            background: linear-gradient(135deg, #6b46c1, #4facfe);
             color: white;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
         }
 
-        .schedule-item {
+        .calendar-header div {
+            padding: 1rem 0.5rem;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .calendar-header div:last-child {
+            border-right: none;
+        }
+
+        .calendar-body {
+            display: grid;
+            grid-template-columns: 100px repeat(7, 1fr);
+        }
+
+        .time-slot {
+            background: #f8f9fa;
+            padding: 1rem 0.5rem;
+            font-weight: 600;
+            color: #555;
+            border-right: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
             display: flex;
-            justify-content: space-between;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.95rem;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
         }
 
-        .schedule-item:last-child {
-            border-bottom: none;
+        .class-slot {
+            padding: 0.75rem 0.5rem;
+            border-right: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .class-slot:hover {
+            background: #f0f0f0;
+        }
+
+        .class-slot.active {
+            background: linear-gradient(135deg, rgba(107, 70, 193, 0.15), rgba(79, 172, 254, 0.15));
+            color: #6b46c1;
+            font-weight: 600;
+            border-color: rgba(107, 70, 193, 0.3);
+        }
+
+        .class-slot.active:hover {
+            background: linear-gradient(135deg, rgba(107, 70, 193, 0.25), rgba(79, 172, 254, 0.25));
+        }
+
+        .calendar-row {
+            display: contents;
         }
 
         /* Instructors Section */
@@ -375,14 +418,13 @@
         .map-container {
             width: 100%;
             height: 400px;
-            background: #e0e0e0;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
+        }
+
+        .map-container iframe {
+            display: block;
         }
 
         /* Footer */
@@ -438,8 +480,30 @@
                 height: 300px;
             }
 
-            .schedule-grid {
-                grid-template-columns: 1fr;
+            .calendar-header,
+            .calendar-body {
+                grid-template-columns: 80px repeat(7, 1fr);
+            }
+
+            .time-slot,
+            .class-slot {
+                font-size: 0.75rem;
+                padding: 0.5rem 0.25rem;
+            }
+
+            .calendar-header div {
+                padding: 0.75rem 0.25rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .calendar-container {
+                overflow-x: auto;
+            }
+
+            .calendar-header,
+            .calendar-body {
+                min-width: 600px;
             }
 
             .hero {
@@ -572,7 +636,7 @@
                 </div>
 
                 <div class="class-card">
-                    <img src="https://images.unsplash.com/photo-1599447292325-ffb5fb5f0b72?w=600&q=80&auto=format&fit=crop" alt="Pranayama class" class="class-image">
+                    <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=600&q=80&auto=format&fit=crop" alt="Pranayama breathing practice" class="class-image">
                     <div class="class-content">
                         <h3>Pranayama</h3>
                         <p class="class-duration">45 minutes</p>
@@ -596,79 +660,187 @@
     <section id="schedule" class="schedule">
         <div class="container">
             <div class="section-header">
-                <h2>Class Schedule</h2>
+                <h2>Weekly Class Schedule</h2>
                 <p>Find the perfect time for your practice</p>
             </div>
-            <div class="schedule-grid">
-                <div class="schedule-card">
-                    <h4>Monday - Wednesday - Friday</h4>
-                    <div class="schedule-item">
-                        <span>Hatha Yoga</span>
-                        <span>6:00 AM</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span>Vinyasa Flow</span>
-                        <span>8:00 AM</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span>Pranayama</span>
-                        <span>10:00 AM</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span>Ashtanga Yoga</span>
-                        <span>5:30 PM</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span>Restorative Yoga</span>
-                        <span>7:30 PM</span>
-                    </div>
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <div>Time</div>
+                    <div>Monday</div>
+                    <div>Tuesday</div>
+                    <div>Wednesday</div>
+                    <div>Thursday</div>
+                    <div>Friday</div>
+                    <div>Saturday</div>
+                    <div>Sunday</div>
                 </div>
+                <div class="calendar-body">
+                    <!-- 6:00 AM Row -->
+                    <div class="calendar-row">
+                        <div class="time-slot">6:00 AM</div>
+                        <div class="class-slot active">Hatha Yoga</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Hatha Yoga</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Hatha Yoga</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                    </div>
 
-                <div class="schedule-card">
-                    <h4>Tuesday - Thursday</h4>
-                    <div class="schedule-item">
-                        <span>Vinyasa Flow</span>
-                        <span>6:30 AM</span>
+                    <!-- 6:30 AM Row -->
+                    <div class="calendar-row">
+                        <div class="time-slot">6:30 AM</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Vinyasa Flow</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Vinyasa Flow</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
                     </div>
-                    <div class="schedule-item">
-                        <span>Hatha Yoga</span>
-                        <span>9:00 AM</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span>Meditation</span>
-                        <span>11:00 AM</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span>Vinyasa Flow</span>
-                        <span>6:00 PM</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span>Restorative Yoga</span>
-                        <span>8:00 PM</span>
-                    </div>
-                </div>
 
-                <div class="schedule-card">
-                    <h4>Saturday - Sunday</h4>
-                    <div class="schedule-item">
-                        <span>Ashtanga Yoga</span>
-                        <span>7:00 AM</span>
+                    <!-- 7:00 AM Row -->
+                    <div class="calendar-row">
+                        <div class="time-slot">7:00 AM</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Ashtanga Yoga</div>
+                        <div class="class-slot active">Ashtanga Yoga</div>
                     </div>
-                    <div class="schedule-item">
-                        <span>Hatha Yoga</span>
-                        <span>9:30 AM</span>
+
+                    <!-- 8:00 AM Row -->
+                    <div class="calendar-row">
+                        <div class="time-slot">8:00 AM</div>
+                        <div class="class-slot active">Vinyasa Flow</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Vinyasa Flow</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Vinyasa Flow</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
                     </div>
-                    <div class="schedule-item">
-                        <span>Pranayama</span>
-                        <span>11:30 AM</span>
+
+                    <!-- 9:00 AM Row -->
+                    <div class="calendar-row">
+                        <div class="time-slot">9:00 AM</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Hatha Yoga</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Hatha Yoga</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
                     </div>
-                    <div class="schedule-item">
-                        <span>Meditation</span>
-                        <span>4:00 PM</span>
+
+                    <!-- 9:30 AM Row -->
+                    <div class="calendar-row">
+                        <div class="time-slot">9:30 AM</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Hatha Yoga</div>
+                        <div class="class-slot active">Hatha Yoga</div>
                     </div>
-                    <div class="schedule-item">
-                        <span>Vinyasa Flow</span>
-                        <span>6:00 PM</span>
+
+                    <!-- 10:00 AM Row -->
+                    <div class="calendar-row">
+                        <div class="time-slot">10:00 AM</div>
+                        <div class="class-slot active">Pranayama</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Pranayama</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Pranayama</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                    </div>
+
+                    <!-- 11:00 AM Row -->
+                    <div class="calendar-row">
+                        <div class="time-slot">11:00 AM</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Meditation</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Meditation</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                    </div>
+
+                    <!-- 11:30 AM Row -->
+                    <div class="calendar-row">
+                        <div class="time-slot">11:30 AM</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Pranayama</div>
+                        <div class="class-slot active">Pranayama</div>
+                    </div>
+
+                    <!-- 4:00 PM Row -->
+                    <div class="calendar-row">
+                        <div class="time-slot">4:00 PM</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Meditation</div>
+                        <div class="class-slot active">Meditation</div>
+                    </div>
+
+                    <!-- 5:30 PM Row -->
+                    <div class="calendar-row">
+                        <div class="time-slot">5:30 PM</div>
+                        <div class="class-slot active">Ashtanga Yoga</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Ashtanga Yoga</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Ashtanga Yoga</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                    </div>
+
+                    <!-- 6:00 PM Row -->
+                    <div class="calendar-row">
+                        <div class="time-slot">6:00 PM</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Vinyasa Flow</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Vinyasa Flow</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Vinyasa Flow</div>
+                        <div class="class-slot active">Vinyasa Flow</div>
+                    </div>
+
+                    <!-- 7:30 PM Row -->
+                    <div class="calendar-row">
+                        <div class="time-slot">7:30 PM</div>
+                        <div class="class-slot active">Restorative Yoga</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Restorative Yoga</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Restorative Yoga</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                    </div>
+
+                    <!-- 8:00 PM Row -->
+                    <div class="calendar-row">
+                        <div class="time-slot">8:00 PM</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Restorative Yoga</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot active">Restorative Yoga</div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
+                        <div class="class-slot"></div>
                     </div>
                 </div>
             </div>
@@ -762,7 +934,15 @@
                 </div>
 
                 <div class="map-container">
-                    <p>Map Location: Nerul, Navi Mumbai</p>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.5156857890666!2d73.01479731490134!3d19.033074487113958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c3c8c5d9e9e3%3A0x6f3e7c9b7a8b9c8d!2sNerul%2C%20Navi%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1699000000000!5m2!1sen!2sin"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </div>
