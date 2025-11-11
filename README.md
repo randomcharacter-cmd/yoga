@@ -66,7 +66,7 @@ All 12 images are optimized with:
 - Responsive dimensions (400px - 1600px)
 - Total image weight: ~440KB
 
-See **[IMAGE_OPTIMIZATION.md](IMAGE_OPTIMIZATION.md)** for details on local image hosting.
+**Want to host images locally?** See **[LOCAL_IMAGES_SETUP.md](LOCAL_IMAGES_SETUP.md)** for step-by-step instructions.
 
 ## Browser Support
 
