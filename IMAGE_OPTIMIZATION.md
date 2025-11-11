@@ -1,5 +1,13 @@
 # Image Optimization Guide - Krishna Yoga Website
 
+## ⚠️ IMPORTANT: Website Already Optimized!
+
+**The website works perfectly as-is. No action required!**
+
+All images are hosted on Unsplash CDN with optimal compression and global delivery. Only proceed with local image hosting if you have a specific offline requirement.
+
+---
+
 ## Current State: Optimized CDN Images ✓
 
 The website currently uses **Unsplash CDN** with aggressive optimization for maximum performance.
@@ -45,11 +53,15 @@ All images now use these parameters:
 
 ## Option 2: Download and Use Local Images
 
+**⚠️ WARNING: Only do this if you specifically need offline hosting!**
+
+The website works perfectly with CDN images (Option 1). Only switch to local images if you have a specific requirement for offline access.
+
 If you prefer to host images locally (for offline use or full control):
 
 ### Step 1: Download Images
 
-Run the provided script from your local machine (not in restricted network):
+Run the provided script from your local machine (must have unrestricted internet access):
 
 ```bash
 # Option A: Python script
@@ -61,21 +73,22 @@ bash setup_images.sh
 
 This downloads all 12 images (~440KB total) to the `images/` directory.
 
-### Step 2: Update HTML
-
-Run the conversion script:
+**IMPORTANT**: Verify all images downloaded successfully before proceeding!
 
 ```bash
-bash use_local_images.sh
+# Check that images exist and are not tiny (>1KB)
+ls -lh images/*.jpg
 ```
 
-This automatically updates all image paths in `index.html` from CDN URLs to local paths.
+### Step 2: Update HTML (MANUAL ONLY)
 
-### Step 3: Verify
+**DO NOT use the automated script!** Manually update image paths in `index.html` only after confirming all images downloaded successfully.
 
-Open `index.html` in a browser and verify all images load correctly.
+Search and replace in your editor:
+- `https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1600&q=75&fm=jpg&fit=crop` → `images/hero-yoga-class.jpg`
+- (Repeat for all 12 images - see Image Inventory below)
 
-### Step 4: Deploy
+### Step 3: Deploy
 
 Upload the entire directory including `images/` folder to your web server.
 
@@ -128,13 +141,21 @@ For small icons and logos, combine into a single sprite sheet to reduce HTTP req
 
 ## Troubleshooting
 
+### ⚠️ Website broken after running scripts
+**Solution**: Restore from git
+```bash
+git checkout HEAD -- index.html
+```
+The website uses CDN images and doesn't need local files.
+
 ### Images won't download (403 Forbidden)
-The build environment has network restrictions. Run the scripts from your local computer instead.
+The build environment has network restrictions. Run the scripts from your local computer with unrestricted internet access.
 
 ### Images broken after switching to local
-- Verify files exist in `images/` directory
+- **First**: Verify files exist and are valid: `ls -lh images/*.jpg`
 - Check file permissions: `chmod 644 images/*.jpg`
 - Ensure correct relative paths in HTML
+- If images are tiny (<1KB), they didn't download - restore to CDN URLs
 
 ### Images too large
 - Re-download with lower quality: edit `download_images.py` and change `q=75` to `q=60`
@@ -166,11 +187,12 @@ The build environment has network restrictions. Run the scripts from your local 
 
 | File | Purpose |
 |------|---------|
-| `download_images.py` | Python script to download all images |
-| `setup_images.sh` | Bash script to download all images |
-| `use_local_images.sh` | Convert HTML to use local image paths |
+| `download_images.py` | Python script to download all images (use with caution) |
+| `setup_images.sh` | Bash script to download all images (use with caution) |
 | `images/README.md` | Quick reference guide |
 | `IMAGE_OPTIMIZATION.md` | This comprehensive guide |
+
+**Note**: These scripts require unrestricted internet access. Manual path updates are recommended after downloading.
 
 ---
 
