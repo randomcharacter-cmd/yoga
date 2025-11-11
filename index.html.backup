@@ -119,7 +119,7 @@
             justify-content: center;
             text-align: center;
             background: linear-gradient(135deg, rgba(107, 70, 193, 0.9), rgba(79, 172, 254, 0.85)),
-                        url('images/hero-yoga-class.jpg
+                        url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1600&q=75&fm=jpg&fit=crop') center/cover;
             color: white;
             position: relative;
             overflow: hidden;
@@ -580,7 +580,7 @@
                 <h2>About Krishna Yoga</h2>
             </div>
             <div class="about-content">
-                <img src="images/about-studio.jpg" alt="Peaceful yoga studio interior" class="about-image">
+                <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&q=75&fm=jpg&fit=crop" alt="Peaceful yoga studio interior" class="about-image">
                 <div class="about-text">
                     <h3>Your Journey to Wellness Starts Here</h3>
                     <p>Founded in 2015, Krishna Yoga has been Navi Mumbai's premier destination for authentic yoga practice. Our studio combines traditional yogic wisdom with modern teaching methodologies to create a transformative experience for practitioners of all levels.</p>
@@ -600,7 +600,7 @@
             </div>
             <div class="classes-grid">
                 <div class="class-card">
-                    <img src="images/class-hatha.jpg" alt="Hatha Yoga class" class="class-image">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=75&fm=jpg&fit=crop" alt="Hatha Yoga class" class="class-image">
                     <div class="class-content">
                         <h3>Hatha Yoga</h3>
                         <p class="class-duration">60 minutes</p>
@@ -609,7 +609,7 @@
                 </div>
 
                 <div class="class-card">
-                    <img src="images/class-vinyasa.jpg" alt="Vinyasa Flow class" class="class-image">
+                    <img src="https://images.unsplash.com/photo-1588286840104-8957b019727f?w=600&q=75&fm=jpg&fit=crop" alt="Vinyasa Flow class" class="class-image">
                     <div class="class-content">
                         <h3>Vinyasa Flow</h3>
                         <p class="class-duration">75 minutes</p>
@@ -618,7 +618,7 @@
                 </div>
 
                 <div class="class-card">
-                    <img src="images/class-ashtanga.jpg" alt="Ashtanga Yoga class" class="class-image">
+                    <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&q=75&fm=jpg&fit=crop" alt="Ashtanga Yoga class" class="class-image">
                     <div class="class-content">
                         <h3>Ashtanga Yoga</h3>
                         <p class="class-duration">90 minutes</p>
@@ -627,7 +627,7 @@
                 </div>
 
                 <div class="class-card">
-                    <img src="images/class-restorative.jpg" alt="Restorative Yoga class" class="class-image">
+                    <img src="https://images.unsplash.com/photo-1593810450967-f9c42742e326?w=600&q=75&fm=jpg&fit=crop" alt="Restorative Yoga class" class="class-image">
                     <div class="class-content">
                         <h3>Restorative Yoga</h3>
                         <p class="class-duration">60 minutes</p>
@@ -636,7 +636,7 @@
                 </div>
 
                 <div class="class-card">
-                    <img src="images/class-pranayama.jpg" alt="Pranayama breathing practice" class="class-image">
+                    <img src="https://images.unsplash.com/photo-1602192509154-0b900ee1f851?w=600&q=75&fm=jpg&fit=crop" alt="Pranayama breathing practice" class="class-image">
                     <div class="class-content">
                         <h3>Pranayama</h3>
                         <p class="class-duration">45 minutes</p>
@@ -645,7 +645,7 @@
                 </div>
 
                 <div class="class-card">
-                    <img src="images/class-meditation.jpg" alt="Meditation class" class="class-image">
+                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=75&fm=jpg&fit=crop" alt="Meditation class" class="class-image">
                     <div class="class-content">
                         <h3>Meditation</h3>
                         <p class="class-duration">30 minutes</p>
@@ -856,28 +856,28 @@
             </div>
             <div class="instructors-grid">
                 <div class="instructor-card">
-                    <img src="images/instructor-priya.jpg" alt="Priya Sharma, Head Instructor" class="instructor-image">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=75&fm=jpg&fit=crop" alt="Priya Sharma, Head Instructor" class="instructor-image">
                     <h3>Priya Sharma</h3>
                     <p class="instructor-title">Founder & Lead Instructor</p>
                     <p>500-hour certified yoga teacher with 15 years of experience. Specializes in Hatha and Ashtanga Yoga.</p>
                 </div>
 
                 <div class="instructor-card">
-                    <img src="images/instructor-ananya.jpg" alt="Ananya Desai, Vinyasa Specialist" class="instructor-image">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=75&fm=jpg&fit=crop" alt="Ananya Desai, Vinyasa Specialist" class="instructor-image">
                     <h3>Ananya Desai</h3>
                     <p class="instructor-title">Vinyasa Flow Specialist</p>
                     <p>Certified in Vinyasa and Power Yoga. Brings dynamic energy and creative sequencing to every class.</p>
                 </div>
 
                 <div class="instructor-card">
-                    <img src="images/instructor-rajesh.jpg" alt="Rajesh Kumar, Meditation Teacher" class="instructor-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=75&fm=jpg&fit=crop" alt="Rajesh Kumar, Meditation Teacher" class="instructor-image">
                     <h3>Rajesh Kumar</h3>
                     <p class="instructor-title">Meditation & Pranayama Teacher</p>
                     <p>10+ years teaching meditation and breathwork. Trained in traditional Vedantic philosophy.</p>
                 </div>
 
                 <div class="instructor-card">
-                    <img src="images/instructor-meera.jpg" alt="Meera Patel, Restorative Yoga Teacher" class="instructor-image">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=75&fm=jpg&fit=crop" alt="Meera Patel, Restorative Yoga Teacher" class="instructor-image">
                     <h3>Meera Patel</h3>
                     <p class="instructor-title">Restorative Yoga Instructor</p>
                     <p>Specializes in therapeutic yoga and stress management. Certified yoga therapist and wellness coach.</p>
