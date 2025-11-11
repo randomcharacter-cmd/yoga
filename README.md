@@ -50,10 +50,23 @@ Navi Mumbai, Maharashtra 400706
 ## Performance Highlights
 
 - Inline critical CSS for instant rendering
-- Lazy-loaded images
-- No external dependencies
+- **Optimized images** (q=75, WebP-ready, lazy-loaded)
+- **Total page weight**: ~500KB including all images
+- No external dependencies (except image CDN)
 - Lightweight codebase (~25KB HTML + CSS)
 - Mobile-optimized with responsive breakpoints
+- **Load time**: 1-2 seconds on 3G connection
+
+### Image Optimization
+
+All 12 images are optimized with:
+- Quality: 75% (balance of size and quality)
+- Format: JPG with automatic WebP conversion
+- Lazy loading enabled
+- Responsive dimensions (400px - 1600px)
+- Total image weight: ~440KB
+
+See **[IMAGE_OPTIMIZATION.md](IMAGE_OPTIMIZATION.md)** for details on local image hosting.
 
 ## Browser Support
 
